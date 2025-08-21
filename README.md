@@ -28,6 +28,7 @@ ___
   * [Set scopes for the authentication token](#set-scopes-for-the-authentication-token)
 * [Customizing](#customizing)
   * [inputs](#inputs)
+  * [environment variables](#environment-variables)
 * [Contributing](#contributing)
 
 ## Usage
@@ -55,6 +56,36 @@ jobs:
         with:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+```
+
+You can also [authenticate to Docker Hub with OpenID Connect](https://docs.docker.com/enterprise/security/oidc-connections/)
+when your Docker Hub organization has an OIDC connection configured. The
+workflow must grant the `id-token: write` permission, pass the Docker Hub
+organization name as `username`, omit `password`, and set the OIDC connection
+ID in `DOCKERHUB_OIDC_CONNECTIONID` environment variable.
+
+```yaml
+name: ci
+
+on:
+  push:
+    branches: main
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  login:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Login to Docker Hub
+        uses: docker/login-action@v4
+        env:
+          DOCKERHUB_OIDC_CONNECTIONID: ${{ vars.DOCKERHUB_OIDC_CONNECTIONID }}
+        with:
+          username: ${{ vars.DOCKERHUB_ORGANIZATION }}
 ```
 
 ### GitHub Container Registry
@@ -689,6 +720,15 @@ The following inputs can be used as `step.with` keys:
 
 > [!NOTE]
 > The `registry-auth` input cannot be used with other inputs except `logout`.
+
+### environment variables
+
+The following environment variables can be set as `step.env` keys:
+
+| Name                          | Type   | Default | Description                                                                 |
+|-------------------------------|--------|---------|-----------------------------------------------------------------------------|
+| `DOCKERHUB_OIDC_CONNECTIONID` | String |         | Docker Hub OIDC connection ID. Required for Docker Hub OIDC login           |
+| `DOCKERHUB_OIDC_EXPIREIN`     | Number | `300`   | Docker Hub OIDC token lifetime in seconds. Must be between `300` and `3600` |
 
 ## Contributing
 

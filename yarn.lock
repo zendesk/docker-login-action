@@ -3155,6 +3155,7 @@ __metadata:
   resolution: "docker-login@workspace:."
   dependencies:
     "@actions/core": "npm:^3.0.1"
+    "@actions/http-client": "npm:^4.0.1"
     "@aws-sdk/client-ecr": "npm:^3.1077.0"
     "@aws-sdk/client-ecr-public": "npm:^3.1077.0"
     "@docker/actions-toolkit": "npm:^0.93.0"
@@ -3176,6 +3177,7 @@ __metadata:
     js-yaml: "npm:^5.2.1"
     prettier: "npm:^3.8.1"
     typescript: "npm:^5.9.3"
+    uuid: "npm:^14.0.1"
     vitest: "npm:^4.0.18"
   languageName: unknown
   linkType: soft
@@ -6297,6 +6299,15 @@ __metadata:
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
   checksum: 10/474acf1146cb2701fe3b074892217553dfcf9a031280919ba1b8d651a068c9b15d863b7303cb15bd00a862b498e6cf4ad7b4a08fb134edd5a6f7641681cb54a2
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^14.0.1":
+  version: 14.0.1
+  resolution: "uuid@npm:14.0.1"
+  bin:
+    uuid: dist-node/bin/uuid
+  checksum: 10/0f978fd5b0269d7acb615342aeb131f0b8d85eeb8ec34f2915d906baa3befcc14a079a430d0f8116aec6fd20c850cbfab65d1b3d1643fa81ed373c0cf9574f18
   languageName: node
   linkType: hard
 

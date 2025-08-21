@@ -150,6 +150,29 @@ jobs:
           username: ${{ vars.DOCKERPUBLICBOT_USERNAME }}
           password: ${{ secrets.DOCKERPUBLICBOT_READ_PAT }}
 
+  dockerhub-oidc:
+    permissions:
+      contents: read
+      id-token: write
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      -
+        name: Login to Docker Hub with OIDC
+        uses: ./
+        env:
+          DOCKERHUB_OIDC_CONNECTIONID: ${{ vars.DOCKERHUB_OIDC_CONNECTIONID }}
+        with:
+          username: ${{ vars.DOCKERHUB_OIDC_USERNAME }}
+
   ecr:
     runs-on: ${{ matrix.os }}
     strategy:
