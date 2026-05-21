@@ -61,6 +61,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@actions/core@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@actions/core@npm:3.0.1"
+  dependencies:
+    "@actions/exec": "npm:^3.0.0"
+    "@actions/http-client": "npm:^4.0.0"
+  checksum: 10/e1295f6b81299cc5655ea571e7b3eea02889fdc479e71c783ad9ca48432c613f52a1fd01fecc973a64488b053083ea925a0d23ac7af0bcd8462afc4f4371918b
+  languageName: node
+  linkType: hard
+
 "@actions/exec@npm:^3.0.0":
   version: 3.0.0
   resolution: "@actions/exec@npm:3.0.0"
@@ -82,6 +92,21 @@ __metadata:
     "@octokit/request-error": "npm:^7.1.0"
     undici: "npm:^6.23.0"
   checksum: 10/5d3b2790f7b67cb7b0ec4416e8b666fde69621bac5fff5e59737c8233f8ad09829471b5cab2c50faea60da39554c69d5e7e51e5ffc8e2c899fba32f47db15b9b
+  languageName: node
+  linkType: hard
+
+"@actions/github@npm:^9.1.1":
+  version: 9.1.1
+  resolution: "@actions/github@npm:9.1.1"
+  dependencies:
+    "@actions/http-client": "npm:^3.0.2"
+    "@octokit/core": "npm:^7.0.6"
+    "@octokit/plugin-paginate-rest": "npm:^14.0.0"
+    "@octokit/plugin-rest-endpoint-methods": "npm:^17.0.0"
+    "@octokit/request": "npm:^10.0.7"
+    "@octokit/request-error": "npm:^7.1.0"
+    undici: "npm:^6.23.0"
+  checksum: 10/eb77846e506df107208ee6a57aa38c80ce6cdd9ab499ec3518a8e3000334def8f93fcf2b43c8b512fede9b093a1ca39d184551a9c50f37cb8fc17704d09c7e70
   languageName: node
   linkType: hard
 
@@ -112,6 +137,16 @@ __metadata:
     tunnel: "npm:^0.0.6"
     undici: "npm:^6.23.0"
   checksum: 10/05f606174577cae62f563361326cc81ee4c83c468dd75e87ac93f59e8d53369a6479c3fc28a4e8ea1bfbb50c8ed7db941629b5dd9f6e3855fe5f639a2ccdabc5
+  languageName: node
+  linkType: hard
+
+"@actions/http-client@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "@actions/http-client@npm:4.0.1"
+  dependencies:
+    tunnel: "npm:^0.0.6"
+    undici: "npm:^6.23.0"
+  checksum: 10/4fab65bf488e15143db87ce200a9d1f6f81832adfb1cbdadc380bbe2a95c86b1f5daa0d89c029533ccea4cd2b811a84ce984dfd0d6530479b82bc9860e8be704
   languageName: node
   linkType: hard
 
@@ -899,16 +934,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docker/actions-toolkit@npm:^0.86.0":
-  version: 0.86.0
-  resolution: "@docker/actions-toolkit@npm:0.86.0"
+"@docker/actions-toolkit@npm:^0.89.0":
+  version: 0.89.0
+  resolution: "@docker/actions-toolkit@npm:0.89.0"
   dependencies:
     "@actions/artifact": "npm:^6.2.1"
     "@actions/cache": "npm:^6.0.0"
-    "@actions/core": "npm:^3.0.0"
+    "@actions/core": "npm:^3.0.1"
     "@actions/exec": "npm:^3.0.0"
-    "@actions/github": "npm:^9.0.0"
-    "@actions/http-client": "npm:^4.0.0"
+    "@actions/github": "npm:^9.1.1"
+    "@actions/http-client": "npm:^4.0.1"
     "@actions/io": "npm:^3.0.2"
     "@actions/tool-cache": "npm:^4.0.0"
     "@sigstore/bundle": "npm:^4.0.0"
@@ -918,14 +953,14 @@ __metadata:
     async-retry: "npm:^1.3.3"
     csv-parse: "npm:^6.2.1"
     gunzip-maybe: "npm:^1.4.2"
-    handlebars: "npm:^4.7.8"
+    handlebars: "npm:^4.7.9"
     he: "npm:^1.2.0"
     js-yaml: "npm:^4.1.1"
     jwt-decode: "npm:^4.0.0"
     semver: "npm:^7.7.4"
     tar-stream: "npm:^3.1.7"
     tmp: "npm:^0.2.5"
-  checksum: 10/89d65c4a48de7474d7356520b452a1f9ff1931e6bcb2b810a2e14b4b6efcdc1fb7d0d22771e94289b58ee57040a77792306a13dc898b2aa7e083124bee102f18
+  checksum: 10/fd1faef4a5c6d0719a0de0dea270315e80cc5ae1b3c949b0888de55b57534312e1407619a49e22af2bd3f43326981fa477b06d861b49bbc9ad484fbf99df577f
   languageName: node
   linkType: hard
 
@@ -3699,7 +3734,7 @@ __metadata:
     "@actions/core": "npm:^3.0.0"
     "@aws-sdk/client-ecr": "npm:^3.1020.0"
     "@aws-sdk/client-ecr-public": "npm:^3.1020.0"
-    "@docker/actions-toolkit": "npm:^0.86.0"
+    "@docker/actions-toolkit": "npm:^0.89.0"
     "@eslint/js": "npm:^9.39.3"
     "@types/js-yaml": "npm:^4.0.9"
     "@types/node": "npm:^24.11.0"
@@ -4486,7 +4521,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"handlebars@npm:^4.7.8":
+"handlebars@npm:^4.7.9":
   version: 4.7.9
   resolution: "handlebars@npm:4.7.9"
   dependencies:
