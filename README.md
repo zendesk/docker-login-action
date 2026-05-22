@@ -144,6 +144,7 @@ jobs:
           password: ${{ secrets.AZURE_CLIENT_SECRET }}
 ```
 
+> [!NOTE]
 > Replace `<registry-name>` with the name of your registry.
 
 #### OpenID Connect (OIDC)
@@ -191,10 +192,12 @@ jobs:
           password: ${{ steps.acr-token.outputs.token }}
 ```
 
+> [!NOTE]
 > Replace `<registry-name>` with the name of your registry.
 
 ### Google Container Registry (GCR)
 
+> [!NOTE]
 > [Google Artifact Registry](#google-artifact-registry-gar) is the evolution of
 > Google Container Registry. As a fully-managed service with support for both
 > container images and non-container artifacts. If you currently use Google
@@ -239,9 +242,10 @@ jobs:
         password: ${{ steps.auth.outputs.access_token }}
 ```
 
+> [!NOTE]
 > Replace `<workload_identity_provider>` with configured workload identity
 > provider. For steps to configure, [see here](https://github.com/google-github-actions/auth#setting-up-workload-identity-federation).
-
+>
 > Replace `<service_account>` with configured service account in workload
 > identity provider which has access to push to GCR
 
@@ -310,12 +314,13 @@ jobs:
           password: ${{ steps.auth.outputs.access_token }}
 ```
 
+> [!NOTE]
 > Replace `<workload_identity_provider>` with configured workload identity
 > provider
-
+>
 > Replace `<service_account>` with configured service account in workload
 > identity provider which has access to push to GCR
-
+>
 > Replace `<location>` with the regional or multi-regional [location](https://cloud.google.com/artifact-registry/docs/repo-organize#locations)
 > of the repository where the image is stored.
 
@@ -347,6 +352,7 @@ jobs:
           password: ${{ secrets.GAR_JSON_KEY }}
 ```
 
+> [!NOTE]
 > Replace `<location>` with the regional or multi-regional [location](https://cloud.google.com/artifact-registry/docs/repo-organize#locations)
 > of the repository where the image is stored.
 
@@ -401,6 +407,7 @@ jobs:
           AWS_ACCOUNT_IDS: 012345678910,023456789012
 ```
 
+> [!NOTE]
 > Only available with [AWS CLI version 1](https://docs.aws.amazon.com/cli/latest/reference/ecr/get-login.html)
 
 You can also use the [Configure AWS Credentials](https://github.com/aws-actions/configure-aws-credentials)
@@ -431,6 +438,7 @@ jobs:
           registry: <aws-account-number>.dkr.ecr.<region>.amazonaws.com
 ```
 
+> [!NOTE]
 > Replace `<aws-account-number>` and `<region>` with their respective values.
 
 ### AWS Public Elastic Container Registry (ECR)
@@ -462,6 +470,7 @@ jobs:
           AWS_REGION: <region>
 ```
 
+> [!NOTE]
 > Replace `<region>` with its respective value (default `us-east-1`).
 
 ### OCI Oracle Cloud Infrastructure Registry (OCIR)
@@ -494,6 +503,7 @@ jobs:
           password: ${{ secrets.OCI_TOKEN }}
 ```
 
+> [!NOTE]
 > Replace `<region>` with their respective values from [availability regions](https://docs.cloud.oracle.com/iaas/Content/Registry/Concepts/registryprerequisites.htm#Availab)
 
 ### Quay.io
