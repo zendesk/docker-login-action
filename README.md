@@ -228,7 +228,7 @@ jobs:
     -
       name: Authenticate to Google Cloud
       id: auth
-      uses: google-github-actions/auth@v1
+      uses: google-github-actions/auth@v3
       with:
         token_format: access_token
         workload_identity_provider: <workload_identity_provider>
@@ -300,7 +300,7 @@ jobs:
       -
         name: Authenticate to Google Cloud
         id: auth
-        uses: google-github-actions/auth@v1
+        uses: google-github-actions/auth@v3
         with:
           token_format: access_token
           workload_identity_provider: <workload_identity_provider>
@@ -426,7 +426,7 @@ jobs:
     steps:
       -
         name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           aws-access-key-id: ${{ vars.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -662,7 +662,7 @@ jobs:
           scope: 'myorg/myimage@push'
       -
         name: Build and push
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           push: true
           tags: myorg/myimage:latest
