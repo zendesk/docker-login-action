@@ -166,7 +166,7 @@ jobs:
         name: Login to ECR
         uses: ./
         with:
-          registry: ${{ secrets.AWS_ACCOUNT_NUMBER }}.dkr.ecr.us-east-1.amazonaws.com
+          registry: 175142243308.dkr.ecr.us-east-1.amazonaws.com
           username: ${{ secrets.AWS_ACCESS_KEY_ID }}
           password: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
@@ -193,7 +193,7 @@ jobs:
         name: Login to ECR
         uses: ./
         with:
-          registry: ${{ secrets.AWS_ACCOUNT_NUMBER }}.dkr.ecr.us-east-1.amazonaws.com
+          registry: 175142243308.dkr.ecr.us-east-1.amazonaws.com
 
   ecr-public:
     runs-on: ${{ matrix.os }}
