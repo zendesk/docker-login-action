@@ -300,7 +300,7 @@ jobs:
         name: Login to Google Artifact Registry
         uses: ./
         with:
-          registry: ${{ secrets.GAR_LOCATION }}-docker.pkg.dev
+          registry: us-east4-docker.pkg.dev
           username: _json_key
           password: ${{ secrets.GAR_JSON_KEY }}
 
