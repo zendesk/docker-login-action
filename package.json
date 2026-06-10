@@ -24,8 +24,8 @@
   "packageManager": "yarn@4.15.0",
   "dependencies": {
     "@actions/core": "^3.0.1",
-    "@aws-sdk/client-ecr": "^3.1050.0",
-    "@aws-sdk/client-ecr-public": "^3.1050.0",
+    "@aws-sdk/client-ecr": "^3.1063.0",
+    "@aws-sdk/client-ecr-public": "^3.1063.0",
     "@docker/actions-toolkit": "^0.91.0",
     "http-proxy-agent": "^9.0.0",
     "https-proxy-agent": "^9.0.0",
