@@ -12,17 +12,14 @@ interface OIDCTokenResponse {
   access_token: string;
 }
 
+const registries = new Set(['', 'docker.io', 'registry-1.docker.io', 'registry-1-stage.docker.io', 'dhi.io']);
 const defaultExpiresIn = 300;
 const minExpiresIn = 300;
 const maxExpiresIn = 3600;
 const maxRetries = 5;
 
 export const isDockerHubOIDC = (registry: string, password: string): boolean => {
-  return process.env.DOCKERHUB_OIDC_CONNECTIONID !== undefined && !password && isDockerHubRegistry(registry);
-};
-
-const isDockerHubRegistry = (registry: string): boolean => {
-  return registry === '' || registry === 'docker.io' || registry === 'registry-1.docker.io' || registry === 'registry-1-stage.docker.io';
+  return process.env.DOCKERHUB_OIDC_CONNECTIONID !== undefined && !password && registries.has(registry);
 };
 
 export const getOIDCToken = async (registry: string, username: string): Promise<LoginCredentials> => {
