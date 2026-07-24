@@ -173,6 +173,27 @@ jobs:
         with:
           username: ${{ vars.DOCKERHUB_OIDC_USERNAME }}
 
+  registry-auth-oidc:
+    permissions:
+      contents: read
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      -
+        name: Login to registries
+        uses: ./
+        env:
+          DOCKERHUB_OIDC_CONNECTIONID: ${{ vars.DOCKERHUB_OIDC_CONNECTIONID }}
+        with:
+          registry-auth: |
+            - username: ${{ vars.DOCKERHUB_OIDC_USERNAME }}
+            - registry: ghcr.io
+              username: ${{ github.actor }}
+              password: ${{ secrets.GITHUB_TOKEN }}
+
   ecr:
     runs-on: ${{ matrix.os }}
     strategy:
